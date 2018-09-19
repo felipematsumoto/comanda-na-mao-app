@@ -1,0 +1,45 @@
+<h3>Adicionar cardapio</h3>
+<div class="container">
+<form id="formCardapio">
+  <div class="form-group">
+    <label for="nome">Nome do produto:</label>
+    <input type="text" class="form-control" name="nome"id="nome" placeholder="Nome do produto" required maxlength="50">
+  </div>
+  <div class="form-group">
+      <label for="descricao">Descricao:</label>
+      <textarea class="form-control" id="descricao" name="descricao" rows="3", placeholder="Descricao do produto" maxlength="255"></textarea>
+  </div>
+  <div class="form-group">
+        <div>
+        <label for="foto">Foto:</label>
+        <input type="file"
+               id="foto" name="foto"
+               accept="image/png, image/jpeg" />
+    </div>
+  </div>
+  <div class="form-group">
+        <label for="preco">Preço:</label>
+        <input type="text" class="form-control" name="preco" id="preco" placeholder="R$10,00" required>
+  </div>
+  <div class="form-group">
+        <label for="tamanhoEmPessoas">Tamanho:</label>
+        <input type="text" class="form-control" name="tamanhoEmPessoas" id="tamanhoEmPessoas" placeholder="1">
+  </div>
+  <div class="form-group">
+    <label for="tipoProduto">Tipo de produto</label>
+    <select class="form-control" id="tipoProduto" name="tipoProduto">
+      <option value="1">Bebidas</option>
+      <option value="2">Sobremesas</option>
+      <option value="3">Comida</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+        <label for="restaurante">Restaurante:</label>
+        <input type="text" class="form-control" name="restaurante" id="restaurante" placeholder="Restaurante do ze">
+  </div>
+
+  <button type="button" id="btnSave" class="btn btn-primary btn-lg float-right">Cadastrar</button>
+</form>
+</div>
+<script type="text/javascript" src="js/addcardapio.js"></script>
