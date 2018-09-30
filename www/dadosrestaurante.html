@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="dados-restaurante">
+    <meta name="author" content="ddlandim">
+
+    <title>Comanda na Mao - Dados do restaurante</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles desta página -->
+    <link href="css/dadosrestaurante.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#">Nome do Restaurante</a>
+                    <input id="nome_restaurante" val="">
+				</li>
+
+                <li>
+                    <a href="#">Nome do Dono</a>
+                    <input id="nome_dono" val="">
+                </li>
+
+                <li>
+                    <a href="#">Email</a>
+                    <input id="email" val="">
+                </li>
+
+                <li>
+                    <a href="#">CNPJ</a>
+                    <input id="cnpj" val="">
+                </li>
+
+                <li>
+                    <a href="#">Endereço</a>
+                    <input id="endereco" val="">
+                </li>
+
+                <li>
+                    <a href="#">Telefone</a>
+                    <input id="telefone" val="">
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Dados do Restaurante <input id="nome_restaurante" val=""> </h1>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu de Informações</a>
+            </div>
+
+            <div class="col-md-6">
+                <img src="" id="logo" class="img-responsive" alt="LOGO RESTAURANTE">
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
