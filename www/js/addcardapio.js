@@ -27,4 +27,47 @@ $(document).ready(function () {
         return false;
         e.preventDefault();
     });
+
+    function get_tipos(log)
+    {
+
+      $.ajax({
+        type: "GET",
+        url: "http://comandanamao.duckdns.org:8100/cardapio/tipos/",
+        data: {
+          login: log,
+          mensagem: "tipos",
+        },
+        success: function(result) {
+
+          // Cria cabecalho dos Botoes
+          $("#tipoProduto").empty();
+
+          var tipos_html = "";
+          var resta_html = "";
+
+          for (var i = 0; i < result.tipos.length; i++)
+          {
+              tipos_html += '<option value="' + result.tipos[i].id +'">' + result.tipos[i].Nome + '</option>';
+          }
+
+          for(var i = 0; i < result.restaurantes.length; i++)
+          {
+              resta_html += '<option value="' + result.restaurantes[i].id +'">' + result.restaurantes[i].Nome + '</option>';
+          }
+
+          $("#tipoProduto").html(tipos_html);
+          $("#restaurante").html(resta_html);
+
+        },
+        error: function(result) {
+          console.log(result);
+        }
+      });
+    }
+
+
+
+    get_tipos(getCookie('login'));
+
 });
