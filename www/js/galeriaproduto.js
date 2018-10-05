@@ -66,7 +66,7 @@ $(document).ready(function() {
     $("#cabecalho").html(cardapio_html);
   }
 
-  render_header(getCookie('Restaurante')); // <----------------------------------------------- Aqui vem o Nomo do restaurante
+  render_header(getCookie('Cardapio')); // <----------------------------------------------- Aqui vem o Nomo do restaurante
   render("Tudo", $("#restaurante_nome").data('value'));
 
   $(document).on('click', '#nav-tab-card', function(e) {

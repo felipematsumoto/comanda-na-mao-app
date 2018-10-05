@@ -1,7 +1,7 @@
 var pagesCliente = ["homeCliente.html", "buscarestaurante.html"]
 var nomesCliente = ["Página Inicial", "Ver Restaurantes"]
-var pagesDono = ["homeDono.html", "restaurante.html", "addcardapio.html","GaleriaProduto.html"]
-var nomesDono = ["Página Inicial", "Criar Restaurantes", "Adicionar Produtos", "Ver Produtos"]
+var pagesDono = ["homeDono.html", "restaurante.html", "addcardapio.html","buscarestaurante.html"]
+var nomesDono = ["Página Inicial", "Criar Restaurantes", "Adicionar Produtos", "Ver Restaurantes"]
 var pages
 
 $('#listaLinks').on('click', 'li',function(){
@@ -17,9 +17,14 @@ $('#sairButton').click(function(){
 
   $('#sidebarCollapse').click();
   setCookie("User","");
-  setCookie("Tipo","");
-  setCookie("ID","");
-  setCookie("Restaurante","");
+  setCookie("UserID","");
+  setCookie("UserTipo","");
+
+  setCookie("Cardapio","");
+
+  setCookie("Restaurante","")
+  setCookie("RestauranteID","");
+  setCookie("MesaID","");
 
   loadPage('signin.html');
 
@@ -27,17 +32,14 @@ $('#sairButton').click(function(){
 
 $(document).ready(function () {
 	$('#sidebarCollapse').on('click', function () {
-      if(checkCookie("User") != null)
-      {
-			   $('#sidebar').toggleClass('active');
-         console.log(getCookie("User"));
-         console.log(getCookie("Tipo"));
-       }
+			  $('#sidebar').toggleClass('active');
+        get_item("User",getCookie("UserID"));
+        get_item("Restaurante",1);
     });
 
-  if(checkCookie("ID") != null)
+  if(checkCookie("UserID") != null)
   {
-      tipo = getCookie("Tipo");
+      tipo = getCookie("UserTipo");
       geraBarra(tipo);
       if(tipo == "Dono")
         loadPage("homeDono.html");
@@ -95,4 +97,24 @@ function geraBarra(tipo){
     $("#welcome").html("<h8> Olá " + getCookie("User") + "</h8>");
 
 
+}
+
+function get_item(tipo, id)
+{
+  $.ajax({
+      type: "POST",
+      url: "http://comandanamao.duckdns.org:8100/login/getitem/",
+      data: {
+        tipo: tipo,
+        id: id,
+      },
+      timeout: 10000,
+      success: function (result){
+        console.log(result);
+
+      },
+      error: function (e) {
+          console.log(e);
+      }
+  });
 }
