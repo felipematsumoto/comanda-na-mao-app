@@ -1,20 +1,14 @@
-<div class="container">
-  <br/>
-  <div class ="row justify-content-center">
-    <div class ="col-auto">
-      <div class="card-body row no-gutters align-items-center">
-        <div>
-          <input class="form-control form-control-sm form-control-borderless" type="search" placeholder="Procurar..." id="inputSearch"></input>
-        </div>
-        <div>
-          <button class="btn btn-sm btn-success" type="button" id="btnSearch">+</button>
-        </div>
+<div class="row">
+    <div class="input-group col-md-10">
+      <input class="form-control" type="text" placeholder="Procurar..." id="inputSearch"></input>
+      <div class="input-group-append">
+      <button type="button" id="btnSearch" class="btn btn-info">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
-  </div>
-  <div id="resultados">
-  <div>
 </div>
 
+<div id="resultados"></div>
 
 <script type="text/javascript" src="js/buscarestaurante.js"></script>
