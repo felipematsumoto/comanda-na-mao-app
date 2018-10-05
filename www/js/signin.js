@@ -19,8 +19,8 @@ $(document).ready(function () {
                         }
                         else{
                           setCookie("User",result.login);
-                          setCookie("Tipo",result.tipoUser);
-                          setCookie("ID",result.ID);
+                          setCookie("UserTipo",result.tipoUser);
+                          setCookie("UserID",result.ID);
                           geraBarra(result.tipoUser);
 
                           if(result.tipoUser == 'Dono')

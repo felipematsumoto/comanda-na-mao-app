@@ -13,7 +13,6 @@ $(document).ready(function () {
             cache: false,
             timeout: 10000,
             success: function (data){
-                console.log(data);
                 $("#btnSave").prop("disabled", false);
                 alert('O produto foi cadastrado com sucesso');
                 $("#formCardapio")[0].reset();

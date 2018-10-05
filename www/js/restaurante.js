@@ -5,7 +5,7 @@ $(document).ready(function () {
             console.log('click');
             var form = $("#formRestaurante")[0];
             var data = new FormData(form);
-            data.append('dono',getCookie("ID"));
+            data.append('dono',getCookie("UserID"));
              $("#btnCadastrar").prop("disabled", true);
              $.ajax({
               type: "POST",
