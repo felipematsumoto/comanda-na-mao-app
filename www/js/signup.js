@@ -1,4 +1,5 @@
 $(document).ready(function () {
+          $(".navbar").hide();
           $("#signupButton").click(function(event){
                   var form = $("#signupForm")[0];
                   var data = new FormData(form);
