@@ -11,7 +11,7 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             cache: false,
-            timeout: 600,
+            timeout: 10000,
             success: function (data){
                 console.log(data);
                 $("#btnSave").prop("disabled", false);
@@ -68,6 +68,6 @@ $(document).ready(function () {
 
 
 
-    get_tipos(getCookie('login'));
+    get_tipos(getCookie('User'));
 
 });
