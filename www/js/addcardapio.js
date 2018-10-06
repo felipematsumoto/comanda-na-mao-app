@@ -13,6 +13,7 @@ $(document).ready(function () {
             cache: false,
             timeout: 10000,
             success: function (data){
+                console.log(data);
                 $("#btnSave").prop("disabled", false);
                 alert('O produto foi cadastrado com sucesso');
                 $("#formCardapio")[0].reset();
@@ -39,6 +40,8 @@ $(document).ready(function () {
         },
         success: function(result) {
 
+          console.log(result);
+
           // Cria cabecalho dos Botoes
           $("#tipoProduto").empty();
 
@@ -47,12 +50,12 @@ $(document).ready(function () {
 
           for (var i = 0; i < result.tipos.length; i++)
           {
-              tipos_html += '<option value="' + result.tipos[i].id +'">' + result.tipos[i].Nome + '</option>';
+              tipos_html += '<option value="' + result.tipos[i].Id +'">' + result.tipos[i].Nome + '</option>';
           }
 
           for(var i = 0; i < result.restaurantes.length; i++)
           {
-              resta_html += '<option value="' + result.restaurantes[i].id +'">' + result.restaurantes[i].Nome + '</option>';
+              resta_html += '<option value="' + result.restaurantes[i].Id +'">' + result.restaurantes[i].Nome + '</option>';
           }
 
           $("#tipoProduto").html(tipos_html);
