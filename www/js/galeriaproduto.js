@@ -36,7 +36,7 @@ $(document).ready(function() {
         for (var i = 0; i < result.menu.length; i++)
         {
           cardapio_html += '<div class="card" style="width: 18rem;">';
-          cardapio_html += '<img class="card-img-top" src="http://teamoanapolis.portal6.com.br/wp-content/uploads/2017/10/comida.jpg">';
+          cardapio_html += '<img class="card-img-top" src="http://comandanamao.duckdns.org:8100/static/cardapio'+ result.menu[i].Arquivo+'">';
           cardapio_html += '<div class="card-body">';
           cardapio_html += '  <p class="card-text">';
           cardapio_html += 'Nome: '+ result.menu[i].Nome +'<br>';
@@ -73,5 +73,11 @@ $(document).ready(function() {
     e.preventDefault();
     render($(e.target).data("type"), $("#restaurante_nome").data('value'));
   });
+
+
+  $("#btninfo").click(function(event){
+        loadPage("dadosrestaurante.html");
+  });
+
 
 });
