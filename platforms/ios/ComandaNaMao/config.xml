@@ -19,6 +19,12 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="BarcodeScanner">
+        <param name="ios-package" value="CDVBarcodeScanner" />
+    </feature>
+    <feature name="PushNotification">
+        <param name="ios-package" value="PushPlugin" />
+    </feature>
     <name>ComandaNaMao</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -49,7 +55,6 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-    <feature name="BarcodeScanner">
-        <param name="ios-package" value="CDVBarcodeScanner" />
-    </feature>
+    <preference name="phonegap-version" value="cli-7.1.0" />
+    <preference name="pgb-builder-version" value="2" />
 </widget>
