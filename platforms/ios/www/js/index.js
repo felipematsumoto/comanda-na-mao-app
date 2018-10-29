@@ -28,6 +28,38 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+		$("#regid").html("true");
+		const push = PushNotification.init({
+			android: {
+				"senderID": "132787574926"
+				forceShow: true
+			},
+			browser: {
+			},
+			ios: {
+			},
+			windows: {}
+		});
+		
+		app.push.on('registration', function(data) {
+			 console.log("registration event: " + data.registrationId);
+			 alert(data.registrationId);
+			 $("#regid").html(data.registrationId);
+			 document.getElementById("regId").innerHTML = data.registrationId;
+			 var oldRegId = localStorage.getItem('registrationId');
+			 if (oldRegId !== data.registrationId) {
+				 // Save new registration ID
+				 localStorage.setItem('registrationId', data.registrationId);
+				 // Post registrationId to your app server as the value has changed
+			 }
+		 });
+
+		 app.push.on('error', function(e) {
+			 alert(e.message);
+			 $("#regid").html(e.message);
+			  document.getElementById("regId").innerHTML = e.message;
+			 console.log("push error = " + e.message);
+		 });
     },
 
     // Update DOM on a Received Event

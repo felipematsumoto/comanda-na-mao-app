@@ -19,6 +19,8 @@
 		28C37A806C884EC496ABD9AE /* CDVBarcodeScanner.mm in Resources */ = {isa = PBXBuildFile; fileRef = F7A32A3B891548CCB5C6C9CA /* CDVBarcodeScanner.mm */; };
 		37373154BE6248B490F00627 /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8A649A9B8B448FA197EA3E /* scannerOverlay.xib */; };
 		065B75EA4991420E9574ADA7 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57605AB962894A8BBE4325E5 /* CDVBarcodeScanner.bundle */; };
+		AAC6F12BA9E540C7974D3B72 /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F276BFF7564640B98F6602 /* AppDelegate+notification.m */; };
+		DDFB101BEDAC48F481C96D70 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0909662C22AF4C048194294F /* PushPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		F7A32A3B891548CCB5C6C9CA /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.mm"; path = "phonegap-plugin-barcodescanner/CDVBarcodeScanner.mm"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6D8A649A9B8B448FA197EA3E /* scannerOverlay.xib */ = {isa = PBXFileReference; name = "scannerOverlay.xib"; path = "scannerOverlay.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
 		57605AB962894A8BBE4325E5 /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.bundle"; path = "CDVBarcodeScanner.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		99F276BFF7564640B98F6602 /* AppDelegate+notification.m */ = {isa = PBXFileReference; name = "AppDelegate+notification.m"; path = "phonegap-plugin-push/AppDelegate+notification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		0909662C22AF4C048194294F /* PushPlugin.m */ = {isa = PBXFileReference; name = "PushPlugin.m"; path = "phonegap-plugin-push/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		650272E8AC7E41FB81BCE2E3 /* AppDelegate+notification.h */ = {isa = PBXFileReference; name = "AppDelegate+notification.h"; path = "phonegap-plugin-push/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B43146EC0E8F4B20AB957414 /* PushPlugin.h */ = {isa = PBXFileReference; name = "PushPlugin.h"; path = "phonegap-plugin-push/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				F7A32A3B891548CCB5C6C9CA /* CDVBarcodeScanner.mm */,
+				99F276BFF7564640B98F6602 /* AppDelegate+notification.m */,
+				0909662C22AF4C048194294F /* PushPlugin.m */,
+				650272E8AC7E41FB81BCE2E3 /* AppDelegate+notification.h */,
+				B43146EC0E8F4B20AB957414 /* PushPlugin.h */,
 			);
 			name = Plugins;
 			path = "ComandaNaMao/Plugins";
@@ -283,6 +293,8 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				28C37A806C884EC496ABD9AE /* CDVBarcodeScanner.mm in Resources */,
+				AAC6F12BA9E540C7974D3B72 /* AppDelegate+notification.m in Sources */,
+				DDFB101BEDAC48F481C96D70 /* PushPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
