@@ -5,8 +5,8 @@
         <title>Comanda Drag and Drop</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-        <script type="text/javascript" src="https://raw.githubusercontent.com/felipematsumoto/comanda-na-mao-app/master/www/js/comanda.js"></script>
-		<script type="text/javascript" src="https://raw.githubusercontent.com/felipematsumoto/comanda-na-mao-app/master/www/js/comanda-ui.js"></script>
+        <script type="text/javascript" src="js/comanda.js"></script>
+		<script type="text/javascript" src="js/comanda-ui.js"></script>
 
         <style>
 		*, html{ font-family: Helvetica, arial, sans-serif; margin: 0 0; padding: 0 0; }
@@ -16,26 +16,6 @@
 
 		p{ margin: 10px 10px; }
 				ul#produtos{ list-style:none; }
-        div#carrinho-top{
-			background-color: #C92D21;
-			width: 960px;
-			color: #fff;
-			border-bottom:1px dashed #fff;
-			opacity: .8;
-			position:relative;
-	 	}
-		div#carrinho-info{ padding: 10px; }
-		div#carrinho-container{
-			height:240px;
-			position:absolute;
-			width:240px;
-			background-color:#fff;
-			border:2px solid #c92d21;
-			display:none;
-		}
-		div#carrinho-container ul{ overflow:auto; height:200px; margin: 10px; list-style:none; }
-		div#carrinho-container ul li{ color:#333; font-size:12px; border-bottom:1px dotted #ccc; text-align:center; margin:10px; }
-
 		ul#produtos li{
 			float: left;
 			background-color:#fff;
@@ -53,122 +33,52 @@
 			background-color:#f2f2f2;
 			padding:6px;
 		}
-		p.preco-de{
-			color:red;
-			text-decoration:line-through;
-			font-size:11px;
-		}
-		p.preco-por{
-			color: #594A40;
-			font-weight:900;
-		}
-		.ui-state-hover{
-			height:160px;
-			border:4px dashed #000;
-		}
         </style>
 
     </head>
     <body>
 
-		<div id="container">
-
-	        <div id="carrinho-top">
-				<div id="carrinho-info">
-					<p>Arraste produtos para esta área</p>
-				</div>
-				<div id="carrinho-container">
-	            	<ul id="carrinho-produtos">
-						<li class="adicione">Arraste produtos para esta área</li>
-					</ul>
-				</div>
-	        </div>
-
-				<h1>COMANDA DO COMANDA NA MAO.</h1>
-
-			<ul id="produtos">
-				<li class="produto-dd"><input type="hidden" class="produto-id" value="1" /><h3>BATATA</h3><p><img src="http://www.quickdog.com.br/wp-content/uploads/2014/06/camarao_a_milanesa.jpg" width="75" height="90" /></p><p class="preco-de">De: R$31,00</p><p class="preco-por">Por: R$13,00</p></li>
-				<li class="produto-dd"><input type="hidden" class="produto-id" value="2" /><h3>LANCHE</h3><p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDwNI8xB6tmeu1_57KJZ6gVFUqdKqibU4BVXbMjNHvGSIHfx6L" width="75" height="90" /></p><p class="preco-de">De: R$39,00</p><p class="preco-por">Por: R$20,00</p></li>
-				<li class="produto-dd"><input type="hidden" class="produto-id" value="3" /><h3>VENTILADOR ARNO</h3><p><img src="https://a-static.mlcdn.com.br/618x463/ventilador-de-mesa-arno-silence-force-vf40-40cm-3-velocidades/magazineluiza/020429200/d6d2fd6e8ebd116138d783e9d5b1dab7.jpg" width="75" height="90" /></p><p class="preco-de">De: R$20,00</p><p class="preco-por">Por: R$14,00</p></li>
-				
+		<div id="container">	      
+			<h1>COMANDA DO COMANDA NA MAO.</h1>
+			<ul id="produtos">				
 			</ul>
 
-
-			</div>
+		</div>
 
     <script type="text/javascript">
 	var timerCarrinho = '';
     $(function(){
 
-		$(window).scroll(function(){
-            var wtop	 	= $(this).scrollTop();
-			var carrinho 	= $('#carrinho-top');
-			var container	= $('#container');
-			var cheight 	= $(carrinho).height();
-            if( wtop > ( cheight / 2 ) )
-            {
-				$(container).css('margin-top', cheight+'px');
-                $(carrinho)
-					.css({
-	                    position: 'absolute'
-	                })
-					.animate({
-						marginTop: ( wtop - cheight ) + 'px'
-					}, 100);
-            }
-            else
-            {
-				$(container).css('margin-top', 0);
-                $(carrinho)
-					.stop(true, true)
-					.css({
-	                    position: 'relative',
-						marginTop: 0
-	                });
-            }
-        });
-
-		$('#produtos li').draggable({
-			helper: 'clone',
-			start: function()
-			{
-				clearTimeout( timerCarrinho );
-				$('#carrinho-container').show();
-			}
-		});
-
-		$('#carrinho-produtos').droppable({
-			hoverClass: 'ui-state-hover',
-			accept: '.produto-dd',
-			drop: function( event, ui )
-			{
-				$(this).find('.adicione').remove();
-				var cod = ui.draggable.find('.produto-id').val();
-				if( $(this).find('#clone-'+cod).length == 0 )
-				{
-					$('<li id="clone-'+cod+'" style="display:none;"></li>').html(ui.draggable.html()).prependTo( this );
-					$(this).find('li:first').slideDown();
-					var total_produtos = $(this).find('li').length;
-					$('#carrinho-info').html('<p>' + total_produtos + ' produto' + ( total_produtos > 1 ? 's' : '' ) + '</p>' );
-				}
-			}
-		});
-
-		$('#carrinho-container').mouseenter(function(){
-			clearTimeout( timerCarrinho );
-		});
-
-		$('#carrinho-container').mouseleave(function(){
-			var carrinho = $(this);
-			timerCarrinho = setTimeout( function(){
-				$(carrinho).slideUp();
-			}, 5000 );
-		});
-
-
-    });
+		 $.ajax({
+		    type: "GET",
+		    enctype: 'multipart/form-data',
+		    url:"https://api.myjson.com/bins/1g1brg",
+		    //url:"http://comandanamao.duckdns.org:8100/comanda/lista_pedidos/?usuario=douglas",
+		    // data: data,
+		    processData: false,
+		    contentType: false,
+		    cache: false,
+		    timeout: 10000,
+		    success: function (data){
+		    	var data=JSON.parse(JSON.stringify(data));
+		    	 var phtml='';
+		           for(var i in data){
+		           	phtml +='<li class="produto-dd">'+
+					'<input type="hidden" class="produto-id" value="'+data[i][i]+'" /><h3>'+data[i]["Coment"]+' </h3><p>'+
+						'<img src="http://comandanamao.duckdns.org:8100/'+data[i]['Foto_Produto'].slice(1,-1)+'" height="90" /></p><p class="preco-de"></p>'+
+						'<p class="preco-por">Valor: R$ '+data[i]['Custo']+'</p></li>';
+		           }
+		           
+		           $("#produtos").append(phtml);
+		    		console.log(data);
+		        // alert('Sucesso! :)');
+		    },
+		    error: function (e) {
+		        alert('Erro ao listar :(');
+		    }
+		  });
+   	 }
+   	 );
     </script>
-
     </body>
 </html>
-
