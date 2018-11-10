@@ -5,80 +5,16 @@
         <title>Comanda Drag and Drop</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-        <script type="text/javascript" src="js/comanda.js"></script>
-		<script type="text/javascript" src="js/comanda-ui.js"></script>
-
-        <style>
-		*, html{ font-family: Helvetica, arial, sans-serif; margin: 0 0; padding: 0 0; }
-        body{ margin: 0 0; padding: 0 0; background-color:#D6D1CA; }
-		h1{ color: #594A40; letter-spacing:-2px ;text-align:center;font-size:46px;font-family:Helvetica, arial,sans-serif;text-transform:uppercase;margin:30px 0 0;}
-		div#container{ margin: 0 auto; width:960px; }
-
-		p{ margin: 10px 10px; }
-				ul#produtos{ list-style:none; }
-		ul#produtos li{
-			float: left;
-			background-color:#fff;
-			-moz-box-shadow: 5px 5px 5px #ccc;
-			  -webkit-box-shadow: 5px 5px 5px #ccc;
-			  box-shadow: 5px 5px 5px #ccc;
-			padding:10px;
-			margin:15px;
-			width:270px;
 			text-align:center;
-		}
-		ul#produtos li h3{
-			margin: 6px 0 6px 0;
-			color: #594A40;
-			background-color:#f2f2f2;
-			padding:6px;
-		}
-        </style>
-
+        <script type="text/javascript" src="js/exibir_pedido_blocos.js"></script> 
+        <link href="css/exibir_pedido.css" rel="stylesheet">
     </head>
     <body>
-
 		<div id="container">	      
 			<h1>COMANDA DO COMANDA NA MAO.</h1>
 			<ul id="produtos">				
 			</ul>
-
 		</div>
-
-    <script type="text/javascript">
-	var timerCarrinho = '';
-    $(function(){
-
-		 $.ajax({
-		    type: "GET",
-		    enctype: 'multipart/form-data',
-		    url:"https://api.myjson.com/bins/1g1brg",
-		    //url:"http://comandanamao.duckdns.org:8100/comanda/lista_pedidos/?usuario=douglas",
-		    // data: data,
-		    processData: false,
-		    contentType: false,
-		    cache: false,
-		    timeout: 10000,
-		    success: function (data){
-		    	var data=JSON.parse(JSON.stringify(data));
-		    	 var phtml='';
-		           for(var i in data){
-		           	phtml +='<li class="produto-dd">'+
-					'<input type="hidden" class="produto-id" value="'+data[i][i]+'" /><h3>'+data[i]["Coment"]+' </h3><p>'+
-						'<img src="http://comandanamao.duckdns.org:8100/'+data[i]['Foto_Produto'].slice(1,-1)+'" height="90" /></p><p class="preco-de"></p>'+
-						'<p class="preco-por">Valor: R$ '+data[i]['Custo']+'</p></li>';
-		           }
-		           
-		           $("#produtos").append(phtml);
-		    		console.log(data);
-		        // alert('Sucesso! :)');
-		    },
-		    error: function (e) {
-		        alert('Erro ao listar :(');
-		    }
-		  });
-   	 }
-   	 );
-    </script>
+        <script type="text/javascript" src="js/exibir_pedido.js"></script>
     </body>
 </html>
