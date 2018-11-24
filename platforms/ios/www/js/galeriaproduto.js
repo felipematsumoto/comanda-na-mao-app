@@ -58,16 +58,29 @@ $(document).ready(function() {
 
   function render_header(restaurante)
   {
-    // Cria header do restaurante
-
-    var cardapio_html = "";
-    cardapio_html += "<div id='restaurante_nome' data-value='" + restaurante + "'> <h3>" + restaurante + "  - Cardápio</h3></div>";
-
-    $("#cabecalho").html(cardapio_html);
+    $.ajax({
+            type: "GET",
+            url: "http://comandanamao.duckdns.org:8100/restaurante/busca_id/",
+            data: {
+              id: Number(restaurante)
+            },
+            timeout: 10000,
+            success: function (result){
+              restaurante = result.Nome;
+              print(result)
+              var cardapio_html = "";
+              cardapio_html += "<div id='restaurante_nome' data-value='" + restaurante + "'> <h3>" + restaurante + "  - Cardápio</h3></div>";
+              $("#cabecalho").html(cardapio_html);
+              render("Tudo", restaurante);
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
   }
 
-  render_header(getCookie('Cardapio')); // <----------------------------------------------- Aqui vem o Nomo do restaurante
-  render("Tudo", $("#restaurante_nome").data('value'));
+  render_header(getCookie('RestauranteID')); // <----------------------------------------------- Aqui vem o Nomo do restaurante
+  
 
   $(document).on('click', '#nav-tab-card', function(e) {
     e.preventDefault();

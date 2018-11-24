@@ -1,6 +1,5 @@
 $(document).ready(function() {
-	$(".navbar").show();
-	
+	$(".navbar").show();	
 	var dvc = {
 		 dev_id: getCookie("UserID"),
 		 reg_id: localStorage.getItem('registrationId')
@@ -27,15 +26,34 @@ $(document).ready(function() {
 		  });
 	 }
 	
+	$("#btnOpenComanda").click(function(event){
+		loadPage("exibir_pedido.html");
+	});
 	
 	$("#btnOpenQRS").click(function(event){
 		cordova.plugins.barcodeScanner.scan(
 		   function (result) {
 		        if(!result.cancelled){
 		               if(result.format == "QR_CODE"){
-												var argumentos = result.text.split(';');
-												setCookie("RestauranteID",argumentos[0].split('=')[1]);
-												setCookie("MesaID",(argumentos[1].split('=')[1]));
+							var argumentos = result.text.split(';');
+							setCookie("RestauranteID",argumentos[0].split('=')[1]);
+							setCookie("MesaID",(argumentos[1].split('=')[1]));
+
+							$.ajax({
+						      type: "GET",
+						      url: "http://comandanamao.duckdns.org:8100/comanda/inicia_comanda/",
+						      data: {
+						        usuario: getCookie("UserID"),
+						        mesa: getCookie("MesaID"),
+						        restaurante: getCookie("RestauranteID")
+						      },
+						      success: function(result) {
+						      	loadPage("exibir_pedido.html");
+						      },
+						      error: function(result) {
+						        console.log(result);
+						      }
+						    });
 		               }else{
 		                  alert("Este aplicativo aceita apenas QR codes");
 		               }
@@ -46,4 +64,12 @@ $(document).ready(function() {
 		     }
 		);
 	});
+	
+	if(getCookie("MesaID") != "" || getCookie("MesaID") != undefined){
+		console.log(1);
+		$("#divBtn").html('<button type="button" class="btn btn-info btn-lg btn-block" id="btnOpenComanda">Voltar para a comanda</button>');
+	}else{
+		console.log(2);
+		$("#divBtn").html('<button type="button" class="btn btn-info btn-lg btn-block" id="btnOpenQRS">Entrar em uma mesa</button>');
+	}
 });

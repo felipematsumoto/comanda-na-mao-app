@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "C:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
                 {
                     "source": "C:\\Users\\fmatsumo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\41bef1e486995dc6be1682ac376f33b2\\res\\values-pt-rPT\\values.xml",

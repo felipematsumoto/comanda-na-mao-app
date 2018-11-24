@@ -27,11 +27,9 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-		$("#regid").html("true");
 		const push = PushNotification.init({
 			android: {
-				"senderID": "132787574926"
+				"senderID": "132787574926",
 				forceShow: true
 			},
 			browser: {
@@ -41,37 +39,19 @@ var app = {
 			windows: {}
 		});
 		
-		app.push.on('registration', function(data) {
-			 console.log("registration event: " + data.registrationId);
-			 alert(data.registrationId);
-			 $("#regid").html(data.registrationId);
-			 document.getElementById("regId").innerHTML = data.registrationId;
-			 var oldRegId = localStorage.getItem('registrationId');
-			 if (oldRegId !== data.registrationId) {
-				 // Save new registration ID
-				 localStorage.setItem('registrationId', data.registrationId);
-				 // Post registrationId to your app server as the value has changed
-			 }
+		push.on('notification', data => {
+		  setCookie("MayDivideOrder",data.additionalData.pedido);
+		  setCookie("messageNotification",data.message);
+		  loadPage("divideQuestion.html");
+		});
+		
+		push.on('registration', function(data) {			 
+			 localStorage.setItem('registrationId', data.registrationId);
 		 });
 
-		 app.push.on('error', function(e) {
-			 alert(e.message);
-			 $("#regid").html(e.message);
-			  document.getElementById("regId").innerHTML = e.message;
-			 console.log("push error = " + e.message);
+		 push.on('error', function(e) {
+			 console.log(e.message);
 		 });
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
     }
 };
 

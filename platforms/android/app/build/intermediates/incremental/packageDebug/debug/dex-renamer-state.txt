@@ -1,19 +1,19 @@
-#Fri Oct 26 02:48:03 BRST 2018
+#Fri Nov 23 00:24:59 BRST 2018
 renamed.5=classes6.dex
 renamed.4=classes5.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.5=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1077
-base.4=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1080
-base.3=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1081
-base.2=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1078
-base.1=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1076
-base.0=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1079
-file.5=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1077\\classes.dex
-file.4=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1080\\classes.dex
-file.3=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1081\\classes.dex
-file.2=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1078\\classes.dex
-file.1=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1076\\classes.dex
-file.0=C\:\\Users\\fmatsumo\\Desktop\\cnm\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1079\\classes.dex
+base.5=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\109
+base.4=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\108
+base.3=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\112
+base.2=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\107
+base.1=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\111
+base.0=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\110
+file.5=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\109\\classes.dex
+file.4=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\108\\classes.dex
+file.3=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\112\\classes.dex
+file.2=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\107\\classes.dex
+file.1=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\111\\classes.dex
+file.0=C\:\\Users\\fmatsumo\\Desktop\\novocomanda\\comanda-na-mao-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\110\\classes.dex

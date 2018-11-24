@@ -1,8 +1,7 @@
-var pagesCliente = ["homeCliente.html", "buscarestaurante.html"]
-var nomesCliente = ["Página Inicial", "Ver Restaurantes"]
+var pagesCliente = ["homeCliente.html", "buscarestaurante.html","fazerPedido.html"]
+var nomesCliente = ["Página Inicial", "Ver Restaurantes", "Fazer pedido"]
 var pagesDono = ["homeDono.html", "restaurante.html", "addcardapio.html","buscarestaurante.html"]
 var nomesDono = ["Página Inicial", "Criar Restaurantes", "Adicionar Produtos", "Ver Restaurantes"]
-var pages
 
 $('#listaLinks').on('click', 'li',function(){
     var that = $(this);
@@ -49,8 +48,6 @@ $(document).ready(function () {
   else {
     loadPage("signin.html");
   }
-
-
 });
 
 function loadPage(page) {
@@ -70,7 +67,6 @@ function geraBarra(tipo){
       pages = pagesCliente
       nomes = nomesCliente
     }
-
 
     $("#listaLinks").empty();
 

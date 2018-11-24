@@ -24,6 +24,7 @@ $('#sairButton').click(function(){
   setCookie("Restaurante","")
   setCookie("RestauranteID","");
   setCookie("MesaID","");
+  setCookie("CardapioMode","view");
 
   loadPage('signin.html');
 

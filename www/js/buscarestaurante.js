@@ -18,7 +18,7 @@ $(document).ready(function () {
 
               for (var i = 0; i < result.lista.length; i++)
               {
-                lista_html += '<div class="card" value="'+ result.lista[i].Nome +'" style="width: 18rem;">';
+                lista_html += '<div class="card" value="'+ result.lista[i].Id +'" style="width: 18rem;">';
                 lista_html += '<img class="card-img-top" src="http://comandanamao.duckdns.org:8100/static/restaurante/fotosRestaurante/'+ result.lista[i].Foto +'">';
                 lista_html += '<div class="card-body">';
                 lista_html += '  <p class="card-text">';
@@ -42,7 +42,8 @@ $(document).ready(function () {
     });
 
     $('#nav-val').on('click', 'div',function(e){
-      setCookie("Cardapio",$(this)[0].attributes.value.value)
+      setCookie("RestauranteID",$(this)[0].attributes.value.value)
+      setCookie("CardapioMode","view");
       loadPage("GaleriaProduto.html");
     });
 
@@ -102,5 +103,4 @@ $(document).ready(function () {
 
     $("#btnSearch").click();
     init_btn();
-
 });

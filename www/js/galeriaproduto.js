@@ -1,5 +1,62 @@
-$(document).ready(function() {
+function showModal(val){
+    $("#prodId").val(val);
+    $("#modalQtd").modal('show');
+  }
 
+  $("#btnMinus").click(function(event){
+    input = $("#inputCounter");
+    if ( input.attr('min') == undefined || parseInt(input.val()) > parseInt(input.attr('min')) ) {
+        input.val(parseInt(input.val())-1);
+    }else{
+        $("#btnMinus").prop("disabled", true);
+        clearInterval(action);
+    }
+  });
+
+  $("#btnPlus").click(function(event){
+    input = $("#inputCounter");
+    if ( input.attr('max') == undefined || parseInt(input.val()) < parseInt(input.attr('max')) ) {
+        input.val(parseInt(input.val())+1);
+    }else{
+        $("#btnPlus").prop("disabled", true);
+        clearInterval(action);
+    }
+  });
+
+  $("#btnPedir").click(function(event){
+        $("#btnPedir").prop("disabled", true);
+        var data = new FormData();
+        data.append('mesa',getCookie("MesaID"));
+        data.append('user',getCookie("UserID"));
+        data.append('estado',0);
+        data.append('quantidade',$("#inputCounter").val());
+        data.append('produto',$("#prodId").val());
+        data.append('coment',$("#inputComment").val());
+
+         $.ajax({
+          type: "POST",
+          enctype: 'multipart/form-data',
+          url: "http://comandanamao.duckdns.org:8100/comanda/fazer_pedido/",
+          data: data,
+          processData: false,
+          contentType: false,
+          cache: false,
+          timeout: 10000,
+          success: function (data){
+              alert('Pedido efetuado com sucesso');
+              $("#modalQtd").modal('hide');
+              $("#btnPedir").prop("disabled", false);
+          },
+          error: function (e) {
+              alert('Erro ao fazer o pedido');
+              $("#btnPedir").prop("disabled", false);
+              $("#modalQtd").modal('hide');
+          }
+        });
+      return false;
+  });
+
+$(document).ready(function() {
   function render(id, restaurante){
     $.ajax({
       type: "GET",
@@ -44,10 +101,16 @@ $(document).ready(function() {
           cardapio_html += 'Tamanho: '+ result.menu[i].Tamanho +'<br>';
           cardapio_html += 'Preço: '+ result.menu[i].Preco;
           cardapio_html += '</p>';
-          cardapio_html += '</div>';
-          cardapio_html += '</div>';
-        }
 
+          if (getCookie("CardapioMode") == "buy"){
+            cardapio_html += '<button type="button" onclick="showModal('+result.menu[i].Id+')" class="btn btn-success btn-md btn-block" id="btn'+result.botoes[i].Id+'">Comprar</button>';
+          }
+
+          cardapio_html += '</div>';
+          cardapio_html += '</div>';
+          cardapio_html += '<br>';
+          cardapio_html += '<br>';
+        }
         $("#nav-val").html(cardapio_html);
       },
       error: function(result) {
@@ -58,16 +121,28 @@ $(document).ready(function() {
 
   function render_header(restaurante)
   {
-    // Cria header do restaurante
-
-    var cardapio_html = "";
-    cardapio_html += "<div id='restaurante_nome' data-value='" + restaurante + "'> <h3>" + restaurante + "  - Cardápio</h3></div>";
-
-    $("#cabecalho").html(cardapio_html);
+    $.ajax({
+            type: "GET",
+            url: "http://comandanamao.duckdns.org:8100/restaurante/busca_id/",
+            data: {
+              id: Number(restaurante)
+            },
+            timeout: 10000,
+            success: function (result){
+              restaurante = result.lista[0].Nome;
+              var cardapio_html = "";
+              cardapio_html += "<div id='restaurante_nome' data-value='" + restaurante + "'> <h3>" + restaurante + "  - Cardápio</h3></div>";
+              $("#cabecalho").html(cardapio_html);
+              render("Tudo", restaurante);
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
   }
 
-  render_header(getCookie('Cardapio')); // <----------------------------------------------- Aqui vem o Nomo do restaurante
-  render("Tudo", $("#restaurante_nome").data('value'));
+  render_header(getCookie('RestauranteID')); // <----------------------------------------------- Aqui vem o Nomo do restaurante
+  
 
   $(document).on('click', '#nav-tab-card', function(e) {
     e.preventDefault();
@@ -78,6 +153,4 @@ $(document).ready(function() {
   $("#btninfo").click(function(event){
         loadPage("dadosrestaurante.html");
   });
-
-
 });

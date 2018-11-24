@@ -18,8 +18,13 @@ $(document).ready(function () {
               cache: false,
               timeout: 10000,
               success: function (data){
-                  alert('Pedido efetuado com sucesso');
-				  $("#btnPedido").prop("disabled", false);
+                  if(data && data !=""){
+                    alert(data);
+                  }else{
+                    alert('Pedido efetuado com sucesso'); 
+                  }
+                  
+				          $("#btnPedido").prop("disabled", false);
               },
               error: function (e) {
                   alert('Erro ao fazer o pedido');
