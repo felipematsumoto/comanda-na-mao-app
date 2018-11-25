@@ -109,7 +109,6 @@ $(document).ready(function() {
           cardapio_html += '</div>';
           cardapio_html += '</div>';
           cardapio_html += '<br>';
-          cardapio_html += '<br>';
         }
         $("#nav-val").html(cardapio_html);
       },

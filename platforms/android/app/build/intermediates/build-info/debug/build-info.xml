@@ -6,9 +6,9 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1542939816636"
+    timestamp="1543152482932"
     token="-1225216178230492895"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
@@ -24,16 +24,28 @@
         duration="0" />
 
     <artifact
-        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
-    <artifact
         location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -45,36 +57,36 @@
         location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
+        location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1542939816636"
-        verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
+        timestamp="1543152482932"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -86,20 +98,8 @@
             location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
+            location="C:\Users\fmatsumo\Desktop\novocomanda\comanda-na-mao-app\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

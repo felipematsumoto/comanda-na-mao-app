@@ -25,12 +25,21 @@ $(document).ready(function() {
 			  }
 		  });
 	 }
-	
-	$("#btnOpenComanda").click(function(event){
+
+	if(getCookie("MesaID") == ""){
+		$("#divBtn").html('<button type="button" class="btn btn-info btn-lg btn-block" id="btnOpenQRS">Entrar em uma mesa</button>');
+	}else{
+		$("#divBtn").html('<button type="button" class="btn btn-info btn-lg btn-block" id="btnOpenComanda">Voltar para a comanda</button>');
+	}
+});
+
+$(document).on('click', '#btnOpenComanda', function(e) {
+		e.preventDefault();
 		loadPage("exibir_pedido.html");
 	});
 	
-	$("#btnOpenQRS").click(function(event){
+	$(document).on('click', '#btnOpenQRS', function(e) {
+    e.preventDefault();
 		cordova.plugins.barcodeScanner.scan(
 		   function (result) {
 		        if(!result.cancelled){
@@ -43,7 +52,7 @@ $(document).ready(function() {
 						      type: "GET",
 						      url: "http://comandanamao.duckdns.org:8100/comanda/inicia_comanda/",
 						      data: {
-						        usuario: getCookie("UserID"),
+						        usuario: getCookie("User"),
 						        mesa: getCookie("MesaID"),
 						        restaurante: getCookie("RestauranteID")
 						      },
@@ -64,12 +73,8 @@ $(document).ready(function() {
 		     }
 		);
 	});
-	
-	if(getCookie("MesaID") != "" || getCookie("MesaID") != undefined){
-		console.log(1);
-		$("#divBtn").html('<button type="button" class="btn btn-info btn-lg btn-block" id="btnOpenComanda">Voltar para a comanda</button>');
-	}else{
-		console.log(2);
-		$("#divBtn").html('<button type="button" class="btn btn-info btn-lg btn-block" id="btnOpenQRS">Entrar em uma mesa</button>');
-	}
-});
+
+$(document).on('click', '#nav-tab-card', function(e) {
+    e.preventDefault();
+    render($(e.target).data("type"), $("#restaurante_nome").data('value'));
+  });

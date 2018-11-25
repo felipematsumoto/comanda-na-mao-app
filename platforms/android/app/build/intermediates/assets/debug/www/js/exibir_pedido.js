@@ -30,13 +30,13 @@ $(document).ready(function () {
                 }
 
                 lista_html += '<div class="card" value="'+ data[i][i] +'" style="width: 18rem;">';
-                lista_html += '<img class="card-img-top" src="http://comandanamao.duckdns.org:8100/'+ data[i]['Foto_Produto'].slice(1, -1) +'">';
+                lista_html += '<img class="card-img-top" src="http://comandanamao.duckdns.org:8100/'+ data[i]['Foto_Produto'] +'">';
                 lista_html += '<div class="card-body">';
                 lista_html += '  <p class="card-text">';
                 lista_html += 'Nome: '+ data[i]['Nome'] +'<br>';
                 lista_html += 'Quantidade: '+ data[i]['Quantidade'] +'<br>';
-                lista_html += 'Valor: R$ '+ data[i]['Custo'];
-                lista_html += 'Progresso: '+ estado +'<br>';
+                lista_html += 'Valor: R$ '+ data[i]['Custo'] +'<br>';
+                lista_html += 'Progresso: '+ estado;
                 lista_html += '</p>';
                 lista_html += '</div>';
                 lista_html += '</div>';
