@@ -2,6 +2,8 @@ $(document).ready(function () {
     url = location.href;
     var url = new URL(url);
     var usuario = url.searchParams.get("usuario");
+    var usuario = url.searchParams.get("mesa");
+    var usuario = url.searchParams.get("restaurante");
     var convidado = url.searchParams.get("convidado");
     $.ajax({
         type: "GET",
@@ -60,6 +62,20 @@ $(document).ready(function () {
         setCookie("Pagamento_Externo", "pay");
         setCookie("Convidado", convidado);
         loadPage("#");//Pagamento aqui
+        
+        $.ajax({
+            type: "GET",
+            enctype: 'multipart/form-data',
+            url:"http://comandanamao.duckdns.org:8100/comanda/libera_comanda/?usuario="+usuario+"&mesa="+mesa+"&restaurante="+restaurante,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 10000,
+            success: function (data) {
+                alert("Pago!");
+            }
+        });
+        
     });
 
 });
