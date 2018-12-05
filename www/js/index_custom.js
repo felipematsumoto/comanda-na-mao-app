@@ -1,5 +1,5 @@
-var pagesCliente = ["homeCliente.html", "buscarestaurante.html","fazerPedido.html"]
-var nomesCliente = ["Página Inicial", "Ver Restaurantes", "Fazer pedido"]
+var pagesCliente = ["homeCliente.html", "buscarestaurante.html"]
+var nomesCliente = ["Página Inicial", "Ver Restaurantes"]
 var pagesDono = ["homeDono.html", "restaurante.html", "addcardapio.html","buscarestaurante.html"]
 var nomesDono = ["Página Inicial", "Criar Restaurantes", "Adicionar Produtos", "Ver Restaurantes"]
 
