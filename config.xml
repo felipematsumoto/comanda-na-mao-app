@@ -19,12 +19,12 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <resource-file src="google-services.json" target="app/google-services.json" />
-        <icon src="res/android/icone-ldpi.png" density="ldpi" />
-        <icon src="res/android/icone-mdpi.png" density="mdpi" />
-        <icon src="res/android/icone-hdpi.png" density="hdpi" />
-        <icon src="res/android/icone-xhdpi.png" density="xhdpi" />
-        <icon src="res/android/icone-xxhdpi.png" density="xxhdpi" />
-        <icon src="res/android/icone-xxxhdpi.png" density="xxxhdpi" />
+        <icon src="res/icon/android/icone-ldpi.png" density="ldpi" />
+        <icon src="res/icon/android/icone-mdpi.png" density="mdpi" />
+        <icon src="res/icon/android/icone-hdpi.png" density="hdpi" />
+        <icon src="res/icon/android/icone-xhdpi.png" density="xhdpi" />
+        <icon src="res/icon/android/icone-xxhdpi.png" density="xxhdpi" />
+        <icon src="res/icon/android/icone-xxxhdpi.png" density="xxxhdpi" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
